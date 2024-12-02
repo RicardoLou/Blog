@@ -1,11 +1,6 @@
 <c3p0-config>
 	<!-- 数据库连接池配置信息 -->
 
-    <!-- 数据库名称: Ricardo -->
-    <!-- 数据库用户名字: root -->
-    <!-- 数据库密码: 123456 -->
-
-    <!-- 请根据实际在下面配置中修改你的配置信息 -->
     <default-config>
         <!-- 连接四大参数配置 -->
         <property name="jdbcUrl">jdbc:mysql://localhost:3306/Ricardo?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf-8</property>

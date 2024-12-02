@@ -6,6 +6,31 @@
 <title>Md2Html</title>
 <!-- 这个文件用来转换 Markdown 到Html 显示 -->
 <!-- 参数: ${article.content} -->
+ <style>
+	    body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(20px) brightness(1);
+            -webkit-backdrop-filter: blur(20px) brightness(1);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            width: 80%;
+            max-width: 1200px;
+            flex: 1;
+        }
+ </style>
 </head>
 
 <!-- preview的css -->
@@ -25,6 +50,7 @@
 <script src="./editormd/lib/flowchart.min.js"></script>
 <script src="./editormd/lib/jquery.flowchart.min.js"></script>
 <script src="./editormd/editormd.js"></script>
+<script src="/Blog/js/clickScranne.js"></script>
 
 <body style="background:#eee;">
  <div id="mdView"  style="background:#eee;">  	
@@ -43,7 +69,7 @@
 			flowChart : true, // 默认不解析
 			sequenceDiagram : true, // 默认不解析			
 		});
-	});	
+    });
 </script>
 
 </body>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>管理 | MyBlog</title>
+<title>管理 | Ricardo‘s Blog</title>
 
 
 <!-- Bootstrap core CSS -->
@@ -25,7 +25,7 @@
 				
 		<div id="header">
 			<div>
-				<h2><a href="/Blog/login.html">MyBlog-管理</a></h2>
+				<h2><a href="/Blog/login.html">Ricardo‘s Blog-管理</a></h2>
 				<h5 class="text-muted">有点粗糙 但能用就行</h5>
 				</div>		
 		</div>
@@ -97,7 +97,7 @@
 		
 		
 	<div id="footer">		
-		<a href="#">&nbsp;&nbsp;MyBlog</a>	
+		<a href="#">&nbsp;&nbsp;Ricardo‘s Blog</a>	
 	</div> 		
 	
 </body>

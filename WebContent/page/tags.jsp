@@ -6,8 +6,62 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>标签 | MyBlog</title>
+	<script src="/Blog/js/clickScranne.js"></script>
+<title>标签 | Ricardo‘s Blog</title>
+	<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image: url('/Blog/img/background3.jpg'); /* 设置背景图片路径 */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		min-height: 100vh;
+    }
 
+	.container {
+		background-color: rgba(255, 255, 255, 0.3);
+		backdrop-filter: blur(20px) brightness(1);
+		-webkit-backdrop-filter: blur(20px) brightness(1);
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		margin: 20px auto;
+		width: 80%; /* 根据需要调整宽度 */
+		max-width: 1200px; /* 限制最大宽度 */
+		flex: 1;
+	}
+
+	#footer {
+		background-color: rgba(255, 255, 255, 0.3);
+		backdrop-filter: blur(20px) brightness(1);
+		-webkit-backdrop-filter: blur(20px) brightness(1);
+		text-align: center;
+		width: 80%;
+		max-width: 1200px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		margin: 0 auto;
+	}
+		.character {
+			position: absolute;
+			font-size: 20px;
+			font-weight: bold;
+			color: red;
+			pointer-events: none; /* 确保不会阻止其他事件 */
+			animation: fade 1s forwards; /* 动画效果 */
+		}
+		@keyframes fade {
+			to {
+				opacity: 0;
+				transform: translateY(-10px);
+			}
+		}
+	</style>
 
 <!-- Bootstrap core CSS -->
 <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +84,7 @@
 
 				<div id="title">
 					<h2>
-						<a href="/Blog/index.jsp">MyBlog</a>
+						<a href="/Blog/index.jsp">Ricardo‘s Blog</a>
 					</h2>
 					<h5 class="text-muted">Winner Winner Chicken Dinner!</h5>
 				</div>
@@ -114,9 +168,21 @@
 	</div>
 	<!-- container -->
 
-
 	<div id="footer">
-		<a href="#">&nbsp;&nbsp;MyBlog</a>
+		<div>
+			<a href="https://github.com/RicardoLou"><img src="/Blog/img/github.png" width="20px" height="20px" class="img-circle" style="align-items: center;">&nbsp;&nbsp;GitHub</a>
+			&nbsp;|
+			<a href="#">&nbsp;&nbsp;Ricardo‘s Blog</a>
+			<br/>
+			copyright © 2024
+		</div>
+		
+		<div class="r_div">
+		<a href="#"><input type="button" class="btn btn-default"   value="返回顶部"  style="width:50%;"/></a>
+		<h6> 被访问了 ${visited} 次</h6>
+		<h6> 你是第 ${member} 个访问者</h6>
+		</div>
+		
 	</div>
 	<!-- footer -->
 

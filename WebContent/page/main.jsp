@@ -5,11 +5,67 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>首页 | MyBlog</title>
+<title>首页 | Ricardo‘s Blog</title>
 <!-- Bootstrap core CSS -->
 <link	href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
-<link href="signin.css" rel="stylesheet">
+<link href="../css/main.css" rel="stylesheet">
+<script src="/Blog/js/clickScranne.js"></script>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image: url('/Blog/img/background.jpg'); /* 设置背景图片路径 */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		min-height: 100vh;
+    }
+
+	.container {
+		background-color: rgba(255, 255, 255, 0.3);
+		backdrop-filter: blur(20px) brightness(1);
+		-webkit-backdrop-filter: blur(20px) brightness(1);
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		margin: 20px auto;
+		width: 80%; /* 根据需要调整宽度 */
+		max-width: 1200px; /* 限制最大宽度 */
+		flex: 1;
+	}
+
+	#footer {
+		background-color: rgba(255, 255, 255, 0.3);
+		backdrop-filter: blur(20px) brightness(1);
+		-webkit-backdrop-filter: blur(20px) brightness(1);
+		text-align: center;
+		width: 80%;
+		max-width: 1200px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		margin: 0 auto;
+	}
+	.character {
+            position: absolute;
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            pointer-events: none; /* 确保不会阻止其他事件 */
+            animation: fade 1s forwards; /* 动画效果 */
+        }
+        @keyframes fade {
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+        }
+    }
+</style>
 
 <link type="text/css" rel="stylesheet" href="./css/main.css" />
 </head>
@@ -24,15 +80,15 @@
 			<div class="col-md-3" id="left_content">
 
 				<div id="title">
-					<h2><a href="/Blog/login.html">MyBlog</a></h2>
-					<h5 class="text-muted">Winner Winner Chicken Dinner!</h5>
+					<h2><a href="/Blog/login.html">Ricardo's Blog</a></h2>
+					<h5 class="text-muted">stay hungry, stay foolish!</h5>
 				</div>
 
 				<div class="c_center" id="person_info">
 					<img src="/Blog/img/header.jpg" height="130" width="130"
 						alt="丢失了我的头像?" class="img-circle">
-					<h4 class="text-muted">Lemonreds</h4>
-					<h5 class="text-muted">星星和浮云.</h5>
+					<h5 class="text-muted">欢迎您：</h5>
+					<h4 class="text-muted">${sessionScope.user.user_name}</h4>
 				</div>
 
 				<div class="c_center">
@@ -46,7 +102,6 @@
 					<div class="inline " >
 						<a href="/Blog/TagsServlet?get=all"><span>${tags_number}</span><br/>标签</a>
 					</div>
-
 				</div>
 
 
@@ -169,17 +224,17 @@
 			</div><!-- container -->
 	<div id="footer">
 		<div>
-			<a href="https://github.com/RicardoLou"><img src="/Blog/img/github.png" width="20px" height="20px" class="img-circle">&nbsp;&nbsp;GitHub</a>
+			<a href="https://github.com/RicardoLou"><img src="/Blog/img/github.png" width="20px" height="20px" class="img-circle" style="align-items: center;">&nbsp;&nbsp;GitHub</a>
 			&nbsp;|
-			<a href="#">&nbsp;&nbsp;MyBlog</a>
+			<a href="#">&nbsp;&nbsp;Ricardo‘s Blog</a>
 			<br/>
 			copyright © 2024
 		</div>
 		
 		<div class="r_div">
-		<a href="#"><input  class="btn btn-default"   value="返回顶部"  style="width:50%;"/></a>
-		<h6> 被访问了 ${visited } 次</h6>
-		<h6> 你是第 ${member}个访问者</h6>    
+		<a href="#"><input type="button" class="btn btn-default"   value="返回顶部"  style="width:50%;"/></a>
+		<h6> 被访问了 ${visited} 次</h6>
+		<h6> 你是第 ${member} 个访问者</h6>
 		</div>
 		
 	</div><!-- footer -->
