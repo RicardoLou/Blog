@@ -1,23 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
  <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 		
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>首页 | Ricardo‘s Blog</title>
-<!-- Bootstrap core CSS -->
-<link	href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<!-- Custom styles for this template -->
-<link href="../css/main.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="/Blog/css/main.css" rel="stylesheet">
 <script src="/Blog/js/clickScranne.js"></script>
-
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script src="/Blog/js/Sakura.js"></script>
+<script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<script src="/Blog/js/slide.js"></script>
 <style>
-    body {
+    .headDisplay {
+        background-image: url('/Blog/img/background.jpg'); /* 确保路径正确 */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh; /* 占满整个屏幕高度 */
+        width: 100%;
+    }
+    content {
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
-        background-image: url('/Blog/img/background.jpg'); /* 设置背景图片路径 */
+        background-image: url('background.jpg');  /*设置背景图片路径 */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -65,11 +74,125 @@
                 transform: translateY(-10px);
         }
     }
+    #jinrishici-sentence {
+        position: absolute;
+        bottom: 20px; /* 距离底部 20px */
+        left: 50%;
+        transform: translateX(-50%);
+        color: greenyellow;
+        font-size: 18px;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 增强可读性 */
+    }
+    .navbar-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;  /* 初始背景透明 */
+    backdrop-filter: none;  /* 初始无毛玻璃效果 */
+    -webkit-backdrop-filter: none;  /* 兼容 Safari */
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+.nav-left {
+    flex: 1;
+    padding-left: 100px;
+}
+
+.blog-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-right {
+    display: flex;
+    gap: 20px;
+    padding-right: 100px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+.nav-right .nav-item a {
+    text-decoration: none;
+    color: #444; /* 默认字体颜色 */
+    font-weight: bold;
+    padding: 10px 15px; /* 增加内边距，提升点击区域 */
+    border-radius: 4px; /* 圆角效果 */
+    transition: background-color 0.3s ease, color 0.3s ease; /* 平滑过渡效果 */
+}
+.nav-left .blog-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease; /* 平滑变大和颜色过渡效果 */
+}
+
+.nav-left .blog-title:hover {
+    transform: scale(1.1); /* 放大 10% */
+    color: #007BFF; /* 悬停时变为蓝色 */
+}.nav-left .blog-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease; /* 平滑变大和颜色过渡效果 */
+}
+
+.nav-left .blog-title:hover {
+    transform: scale(1.1); /* 放大 10% */
+    color: #007BFF; /* 悬停时变为蓝色 */
+}
+.nav-right .nav-item a:hover {
+    background-color: #fff; /* 悬停时背景变为白色 */
+    color: #007BFF; /* 悬停时字体变为蓝色 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 增加阴影效果 */
+}
 </style>
 
 <link type="text/css" rel="stylesheet" href="./css/main.css" />
 </head>
 <body>
+	<div class="headDisplay">
+        <div class="navbar-fixed">
+            <div class="navbar">
+                <div class="nav-left">
+                    <a href="#" class="blog-title">Ricardo's Blog</a>
+                </div>
+                <div class="nav-right">
+                    <div class="nav-item">
+                        <a href="#">日志 ${article_number}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/Blog/SortServlet?get=all">分类 ${sort_number}</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/Blog/TagsServlet?get=all">标签 ${tags_number}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- 其他内容 -->
+        <span id="jinrishici-sentence" style="color: greenyellow;">正在加载今日诗词....</span>
+        
+	</div>
+
+	<div class="content">
 	<div class="head_line"></div>
 
 	<div class="container" id="main">
@@ -91,40 +214,28 @@
 					<h4 class="text-muted">${sessionScope.user.user_name}</h4>
 				</div>
 
-				<div class="c_center">
-					<!-- 这里初始化侧边栏的4个标签 -->
-					<div class="inline ">
-						<a href="#">${article_number}<br/>日志</a>
-					</div>
-					<div class="inline ">
-						<a href="/Blog/SortServlet?get=all"><span> ${sort_number} </span><br/>分类</a>
-					</div>
-					<div class="inline " >
-						<a href="/Blog/TagsServlet?get=all"><span>${tags_number}</span><br/>标签</a>
-					</div>
-				</div>
 
 
 				<div id="list">
 					<table class="table table-hover c_center">
 						<tr class="active">
-							<td><a href="/Blog/index.jsp	"><span class="glyphicon glyphicon-home"></span>
+							<td><a href="/Blog/index.jsp" style="color: black;"><span class="glyphicon glyphicon-home"></span>
 								&nbsp;&nbsp;首页</a></td>
 						</tr>
 						<tr>
-							<td><a href="/Blog/SortServlet?get=all"><span class="glyphicon glyphicon-list"></span>
+							<td><a href="/Blog/SortServlet?get=all" style="color: black;"><span class="glyphicon glyphicon-list"></span>
 								&nbsp;&nbsp;分类</a></td>
 						</tr>
 						<tr>
-							<td><a href="/Blog/TagsServlet?get=all"><span class="glyphicon glyphicon-tags"></span>
+							<td><a href="/Blog/TagsServlet?get=all" style="color: black;"><span class="glyphicon glyphicon-tags"></span>
 								&nbsp;&nbsp;标签</a></td>
 						</tr>
 						<tr>
-							<td><a href="/Blog/AxisServlet"><span class="glyphicon glyphicon-book"></span>
+							<td><a href="/Blog/AxisServlet" style="color: black;"><span class="glyphicon glyphicon-book"></span>
 								&nbsp;&nbsp;时间轴</a></td>
 						</tr>
 						<tr>
-							<td><a href="/Blog/page/about.html"><span class="glyphicon glyphicon-user"></span>
+							<td><a href="/Blog/page/about.html" style="color: black;"><span class="glyphicon glyphicon-user"></span>
 								&nbsp;&nbsp;关于</a></td>
 						</tr>
 					</table>
@@ -232,11 +343,13 @@
 		</div>
 		
 		<div class="r_div">
-		<a href="#"><input type="button" class="btn btn-default"   value="返回顶部"  style="width:50%;"/></a>
+		<input type="button" id="backToTop" class="btn btn-default"   value="返回顶部"  style="width:50%;"/>
 		<h6> 被访问了 ${visited} 次</h6>
 		<h6> 你是第 ${member} 个访问者</h6>
 		</div>
+	<script src="/Blog/js/main.js"></script>
 		
 	</div><!-- footer -->
+</div>
 </body>
 </html>

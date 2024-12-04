@@ -1,4 +1,3 @@
-
 /* 
 * 获取ajax处理对象		
  * @returns {xmlhttp}
@@ -6,7 +5,7 @@
 function getXHR(){	
 	var xmlhttp;
 	if (window.XMLHttpRequest) {
-		xmlhttp = new XMLHttpRequest();
+		 xmlhttp = new XMLHttpRequest();
 	} else {
 		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 	}
@@ -116,3 +115,24 @@ function diss(component , comm_id) {
 	xmlhttp.open("POST", url, true);
 	xmlhttp.send();	
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取返回顶部按钮的元素
+    const backToTopButton = document.getElementById('backToTop');
+
+    // 检查按钮是否存在
+    if (backToTopButton) {
+        // 添加点击事件监听器
+        backToTopButton.addEventListener('click', function(event) {
+            event.preventDefault(); // 阻止默认的跳转行为
+
+            // 使用 window.scrollTo 方法实现平滑滚动
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // 平滑滚动
+            });
+        });
+    } else {
+        console.error('返回顶部按钮未找到');
+    }
+});

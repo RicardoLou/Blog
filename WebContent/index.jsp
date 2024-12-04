@@ -7,6 +7,6 @@
 <title>MyBlog</title>
 </head>
 <body>
-	<jsp:forward page="/LoginServlet" />
+	<jsp:forward page="/LoginServlet"/>
 </body>
 </html>
