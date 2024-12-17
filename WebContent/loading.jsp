@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page isELIgnored="true" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,42 +80,40 @@
 </div>
 
 <script>
-    // 获取进度文本元素
-    const progressText = document.getElementById('progress-text');
+    document.addEventListener('DOMContentLoaded', () => {
+        // 获取进度文本元素
+        const progressText = document.getElementById('progress-text');
 
-    // 定义递归更新进度的函数
-    let progress = 0;
+        // 定义递归更新进度的函数
+        let progress = 0;
 
-    function updateProgress() {
-        // 更新进度文本
-        progressText.textContent = `${progress}%`;
-
-        if (progress === 37) {
-            // 在37%时延迟1秒
-            setTimeout(() => {
+        function updateProgress() {
+            console.log(`Progress value: ${progress}`);
+            // 更新进度文本
+            progressText.textContent = `${progress}\u0025`; // 使用 Unicode 转义字符
+            console.log(progressText.textContent);
+            if (progress === 37) {
+                setTimeout(() => {
+                    progress += 1;
+                    updateProgress();
+                }, 1000);
+            } else if (progress === 80) {
+                setTimeout(() => {
+                    progress += 1;
+                    updateProgress();
+                }, 2000);
+            } else if (progress < 100) {
                 progress += 1;
-                updateProgress(); // 递归调用继续更新进度
-            }, 1000); // 延迟1秒
-        } else if (progress === 80) {
-            // 在80%时延迟2秒
-            setTimeout(() => {
-                progress += 1;
-                updateProgress(); // 递归调用继续更新进度
-            }, 2000); // 延迟2秒
-        } else if (progress < 100) {
-            // 如果进度小于100，继续增加进度
-            progress += 1;
-            setTimeout(updateProgress, 50); // 递归调用继续更新进度，每次延迟50ms
-        } else if (progress === 100) {
-            // 当进度达到100时，跳转到新的页面
-            setTimeout(() => {
-                window.location.href = '/Blog/index.jsp'; // 跳转到目标页面
-            }, 500); // 等待500ms再跳转，给最后的更新效果一些时间
+                setTimeout(updateProgress, 50);
+            } else if (progress === 100) {
+                setTimeout(() => {
+                    window.location.href = '/Blog/loadingServlet';
+                }, 500);
+            }
         }
-    }
-
-    // 启动进度更新
-    updateProgress();
+        // 启动进度更新
+        updateProgress();
+    });
 </script>
 </body>
 </html>

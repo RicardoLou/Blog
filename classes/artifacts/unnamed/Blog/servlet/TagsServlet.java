@@ -29,5 +29,4 @@ public class TagsServlet extends HttpServlet {
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }

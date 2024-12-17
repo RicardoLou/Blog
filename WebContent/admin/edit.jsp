@@ -27,9 +27,9 @@
 	<div class="head_line"></div>
 	<div class="container" id="main">		
 				<div id="title"><h2><a href="/Blog/index.jsp">Ricardo‘s Blog</a></h2>					
-					</div>	
-							
-		   <form action="/Blog/UpdateServlet" method="post">
+					</div>
+
+	<form action="/Blog/UpdateServlet" method="post">
 		   		
 		   		<div class="info" >
 		   		<!-- id -->

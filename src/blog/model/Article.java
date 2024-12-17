@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.util.Date;
 
 import blog.utils.DateUtils;
-import blog.utils.StringUtils;
 
 public class Article implements Comparable {
 
@@ -22,8 +21,16 @@ public class Article implements Comparable {
 
 	}
 
+	public Article(String title, String author, String sort, String time, String content) {
+		this.title = title;
+		this.author = author;
+		this.sort = sort;
+		this.time = time;
+		this.content = content;
+	}
+
 	public Article(int id, String title, String author, String sort, String time, int star, int comment, int visit,
-			String content) {
+				   String content) {
 		super();
 		this.id = id;
 		this.title = title;

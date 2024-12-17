@@ -1,0 +1,98 @@
+/* 通用重置 */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 全局样式 */
+body {
+    font-size: 14px;
+    color: #666;
+    font-family: "Microsoft YaHei", "微软雅黑", Helvetica, Tahoma, Arial, sans-serif;
+    background: #f8f9fa;
+    text-align: left;
+}
+
+/* 标题区域样式 */
+#title {
+    padding: 10px 0;
+    text-align: center;
+    background: #007bff;
+    color: #fff;
+    border-bottom: 2px solid #0056b3;
+}
+
+#title h2 a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* 表单区域样式调整 */
+.info {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 15px auto;
+    max-width: 800px;
+}
+
+.help {
+    display: block;
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+/* 分类按钮和标签按钮样式调整 */
+.btn-default {
+    margin: 5px 0;
+    padding: 5px 10px;
+    background: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.btn-default:hover {
+    background: #d3d6da;
+}
+
+/* 编辑器样式调整 */
+.editormd {
+    width: 100%;
+    max-height: 600px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 10px auto;
+}
+
+/* 按钮样式 */
+.btn-default[type="submit"] {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-default[type="submit"]:hover {
+    background: #0056b3;
+}
+
+/* 底部样式调整 */
+#footer {
+    padding: 10px 0;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    border-top: 2px solid #555;
+}

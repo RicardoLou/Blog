@@ -60,11 +60,11 @@ public class AdminService {
 		if (a == null)
 			return null;
 		// 增加标签
-		String str = request.getParameter("tags").trim();
-		String[] tags = str.split(" ");
-		for (String tag : tags) {
-			tdao.addTag(a.getId(), tag);
-		}
+//		String str = request.getParameter("tags").trim();
+//		String[] tags = str.split(" ");
+//		for (String tag : tags) {
+//			tdao.addTag(a.getId(), tag);
+//		}
 		return a;
 	}
 

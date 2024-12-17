@@ -48,5 +48,4 @@ public class AddServlet extends HttpServlet {
 
 		doGet(request, response);
 	}
-
 }

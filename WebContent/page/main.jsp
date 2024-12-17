@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
- <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -227,7 +227,7 @@
 	<p id="gushici" style="color: greenyellow;">加载中...</p>
 </div>
 
-<div class="content">
+<div class="content" id="content">
 	<div class="head_line"></div>
 
 	<div class="container" id="main">
@@ -307,7 +307,7 @@
 						<span class="list-group-item active">标签</span>
 						<br/>
 
-						<!-- 这里初始化标签 -->
+						<!-- 这里初始��标签 -->
 						<c:forEach var="t"  varStatus="status" items="${tag_list}" >
 							<c:choose>
 								<c:when test="${status.count%2==1}">
@@ -385,5 +385,6 @@
 		<script src="/Blog/js/main.js"></script>
 	</div><!-- footer -->
 </div>
+
 </body>
 </html>
