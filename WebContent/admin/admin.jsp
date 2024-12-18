@@ -25,8 +25,8 @@
 				
 		<div id="header">
 			<div>
-				<h2><a href="/Blog/login.html">Ricardo‘s Blog-管理</a></h2>
-				<h5 class="text-muted">有点粗糙 但能用就行</h5>
+				<h2><a href="/Blog/loadingServlet">Ricardo‘s Blog-管理</a></h2>
+				<h5 class="text-muted">我知道你不是管理员～</h5>
 				</div>		
 		</div>
 				 
@@ -80,22 +80,9 @@
 						 </div>										 
 				</div>							
 				</c:forEach>
-				
 				</div>
-			
-				
-				
-
-
-
 		<div class="foot_line"></div>		
-		</div><!-- container -->		
-		
-		
-		
-		
-		
-		
+		</div><!-- container -->
 	<div id="footer">		
 		<a href="#">&nbsp;&nbsp;Ricardo‘s Blog</a>	
 	</div> 		

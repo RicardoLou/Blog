@@ -55,7 +55,7 @@ public class submitArticleServlet extends HttpServlet {
             // 根据插入结果返回响应
             if (rowsInserted > 0) {
                 out.println("<h2>文章提交成功！</h2>");
-                out.println("<a href='/Blog/index.jsp'>返回首页</a>");
+                out.println("<a href='/Blog/loadingServlet'>返回首页</a>");
             } else {
                 out.println("<h2>文章提交失败，请稍后重试。</h2>");
                 out.println("<a href='/Blog/index.jsp'>返回首页</a>");

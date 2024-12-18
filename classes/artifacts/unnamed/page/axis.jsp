@@ -101,7 +101,7 @@
 				<div id="list">
 					<table class="table table-hover c_center">
 						<tr>
-							<td><a href="/Blog/index.jsp	"><span class="glyphicon glyphicon-home"></span>
+							<td><a href="/Blog/loadingServlet"><span class="glyphicon glyphicon-home"></span>
 								&nbsp;&nbsp;首页</a></td>
 						</tr>
 						<tr>	

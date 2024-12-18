@@ -197,9 +197,7 @@
 				width: 0ch;
 			}
 		}
-
 	</style>
-
 
 </head>
 <body>
@@ -229,11 +227,8 @@
 
 <div class="content" id="content">
 	<div class="head_line"></div>
-
 	<div class="container" id="main">
-
 		<div id="header"></div>
-
 		<div class="row c_center">
 			<div class="col-md-3" id="left_content">
 
@@ -248,8 +243,6 @@
 					<h5 class="text-muted">欢迎您：</h5>
 					<h4 class="text-muted">${sessionScope.user.user_name}</h4>
 				</div>
-
-
 
 				<div id="list">
 					<table class="table table-hover c_center">
@@ -307,7 +300,7 @@
 						<span class="list-group-item active">标签</span>
 						<br/>
 
-						<!-- 这里初始��标签 -->
+						<!-- 这里初始化标签 -->
 						<c:forEach var="t"  varStatus="status" items="${tag_list}" >
 							<c:choose>
 								<c:when test="${status.count%2==1}">
@@ -325,23 +318,17 @@
 					</div>
 				</div><!-- tag -->
 
-
-				<!-- admin here -->
 				<c:if test="${sessionScope.user!=null}">
-					<a href="/Blog/AddServlet">
+					<a href="/Blog/page/addArticle.jsp">
 						<span class="glyphicon glyphicon-plus">&nbsp;&nbsp;写新文章&nbsp;&nbsp;</span>
 					</a>
 					<a href="/Blog/AdminServlet">
 						<span class="glyphicon glyphicon glyphicon-user">&nbsp;&nbsp;管理更多&nbsp;&nbsp;</span>
 					</a>
 				</c:if>
-				<!--  -->
-
 			</div>
 			<div class="col-md-2" id="center_content">
 			</div>
-
-
 			<div  class="col-md-7 " id="right_Content">
 				<br />
 				<br />
@@ -371,12 +358,10 @@
 	<div id="footer">
 		<div>
 			<a href="https://github.com/RicardoLou"><img src="/Blog/img/github.png" width="20px" height="20px" class="img-circle" style="align-items: center;">&nbsp;&nbsp;GitHub</a>
-			&nbsp;|
 			<a href="#">&nbsp;&nbsp;Ricardo‘s Blog</a>
 			<br/>
 			copyright © 2024
 		</div>
-
 		<div class="r_div">
 			<input type="button" id="backToTop" class="btn btn-default"   value="返回顶部"  style="width:50%;"/>
 			<h6> 被访问了 ${visited} 次</h6>
@@ -385,6 +370,5 @@
 		<script src="/Blog/js/main.js"></script>
 	</div><!-- footer -->
 </div>
-
 </body>
 </html>

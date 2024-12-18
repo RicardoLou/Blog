@@ -68,7 +68,7 @@ public class UploadPic extends HttpServlet {
 					String saveFileName = makeFileName(fileName);
 					InputStream is = item.getInputStream();
 					FileOutputStream out = new FileOutputStream(savePath + "\\" + saveFileName);
-					byte buffer[] = new byte[1024];
+					byte[] buffer = new byte[1024];
 					int len = 0;
 					while ((len = is.read(buffer)) > 0) {
 						out.write(buffer, 0, len);

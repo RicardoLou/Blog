@@ -91,7 +91,7 @@
 </head>
 <body>
 <!-- 表单区域 -->
-<div id="title"><h2><a href="/Blog/index.jsp">Ricardo's Blog</a></h2></div>
+<div id="title"><h2><a href="/Blog/loadingServlet">Ricardo's Blog</a></h2></div>
 <form action="/Blog/SubmitArticleServlet" method="post">
   <div class="form-container">
     <label for="title">Title：</label>

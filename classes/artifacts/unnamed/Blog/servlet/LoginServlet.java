@@ -33,8 +33,6 @@ public class LoginServlet extends HttpServlet {
 		User user = userDao.login(username, password);
 
 		if (user != null) {
-
-
 			// 转发到 博客主页 界面
 			request.getRequestDispatcher("/loading.jsp").forward(request, response);
 		} else {

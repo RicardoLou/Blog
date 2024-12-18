@@ -77,7 +77,7 @@
     <div class="head">
         <div id="title">
             <h2>
-                <a href="/Blog/index.jsp">MyBlog</a>
+                <a href="/Blog/loadingServlet">MyBlog</a>
             </h2>
         </div>
     </div>

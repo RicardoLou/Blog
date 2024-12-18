@@ -78,7 +78,7 @@
 
 				<div id="title">
 					<h2>
-						<a href="/index.jsp">Ricardo‘s Blog</a>
+						<a href="/Blog/loadingServlet">Ricardo‘s Blog</a>
 					</h2>
 					<h5 class="text-muted">Winner Winner Chicken Dinner!</h5>
 				</div>
@@ -93,7 +93,7 @@
 				<div id="list">
 					<table class="table table-hover c_center">
 						<tr>
-							<td><a href="/Blog/index.jsp"><span class="glyphicon glyphicon-home"></span>
+							<td><a href="/Blog/loadingServlet"><span class="glyphicon glyphicon-home"></span>
 								&nbsp;&nbsp;首页</a></td>
 						</tr>
 						<tr>	
