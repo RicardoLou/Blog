@@ -82,22 +82,18 @@ java web博客网站，尽最大可能实现mvc模式，没有使用到框架，
 * json-lib-2.1-jdk15 JSON包
 * ezmorph-1.0.3
 
-### 图片预览
-
-![无法显示图片](https://github.com/Lemonreds/MyBlog/blob/master/screenshot/1.png)
-
-![无法显示图片](https://github.com/Lemonreds/MyBlog/blob/master/screenshot/2.png)
-
-![无法显示图片](https://github.com/Lemonreds/MyBlog/blob/master/screenshot/3.png)
-
-![无法显示图片](https://github.com/Lemonreds/MyBlog/blob/master/screenshot/4.png)
-
-![无法显示图片](https://github.com/Lemonreds/MyBlog/blob/master/screenshot/5.png)
-
-![无法显示图片](https://github.com/Lemonreds/MyBlog/blob/master/screenshot/6.png)
-
-![无法显示图片](https://github.com/Lemonreds/MyBlog/blob/master/screenshot/7.png)
 
 ### 最后
 
-JSP注定要凉凉...
+本项目source：https://github.com/Lemonreds/javaee-blog
+我只是修改并美化了一下。
+本项目还有很多bug，如果你有幸看到
+配置环境的步骤如下：
+- 找到lib文件夹并右击 add as library（添加为库）
+- 配置jdk，支持1.8
+- 配置tomcat 我使用的是9.0.95，如果你的配置不行可以参考我的
+- 将mysql-connection的包放到tomcat中，我使用的是mysql-connection 5
+- 找到sql文件，建立一个数据库并运行这个sql文件
+- 配置C3P0文件中的Mysql信息
+- 最后应该可以运行了，如果有其他问题欢迎issue
+JSP 注定要凉凉～～
